@@ -37,17 +37,14 @@ body {
 	left: 4px;
 	border-radius: 50%;
 	cursor: pointer;
-}
-
-.theme-input:checked + .label .theme-switch-btn {
-	animation-name: toggleOn;
+	animation-name: toggleOff;
 	animation-duration: 0.2s;
 	animation-fill-mode: forwards;
 	animation-timing-function: linear;
 }
 
-.theme-input + .label .theme-switch-btn {
-	animation-name: toggleOff;
+.theme-input:checked + .label .theme-switch-btn {
+	animation-name: toggleOn;
 	animation-duration: 0.2s;
 	animation-fill-mode: forwards;
 	animation-timing-function: linear;
