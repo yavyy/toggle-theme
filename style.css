@@ -3,3 +3,72 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	user-select: none;
+}
+
+.theme-input {
+	visibility: hidden;
+}
+
+.label {
+	display: inline-block;
+	width: 80px;
+	height: 40px;
+	background-color: lightgray;
+	border-radius: 20px;
+	position: relative;
+}
+
+.label .theme-switch-btn {
+	height: 32px;
+	width: 32px;
+	background-color: #fff;
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.theme-input:checked + .label .theme-switch-btn {
+	animation-name: toggleOn;
+	animation-duration: 0.2s;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+}
+
+.theme-input + .label .theme-switch-btn {
+	animation-name: toggleOff;
+	animation-duration: 0.2s;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
+}
+
+@keyframes toggleOn {
+	from {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(40px);
+	}
+}
+
+@keyframes toggleOff {
+	from {
+		transform: translateX(40px);
+	}
+
+	to {
+		transform: translateX(0);
+	}
+}
